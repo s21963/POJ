@@ -76,4 +76,6 @@ public class Prostokat implements MoznaWyznaczycWielokrotnoscPrzekatnej, MoznaWy
         hash = prime * hash + (int) (temp ^ (temp >>> 32));
         return hash;
     }
+
+
 }
