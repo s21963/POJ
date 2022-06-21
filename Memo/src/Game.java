@@ -7,9 +7,18 @@ public class Game {
         //Tworzę ramkę JFrame
         JFrame frame = new JFrame();
         frame.setSize(1200, 800);
+        frame.setResizable(true);
         frame.setTitle("Tytuł ramki");
-        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+
+
+
+
+
+
+
+        frame.setVisible(true);
 
     }
 }
