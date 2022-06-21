@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c42df005-b984-44b8-97b1-ffe75ff4a089" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/Memo/logo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Frame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logo1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
@@ -30,9 +34,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -63,11 +69,22 @@
       <workItem from="1655629183037" duration="59000" />
       <workItem from="1655629268484" duration="1108000" />
       <workItem from="1655631481620" duration="1850000" />
-      <workItem from="1655697601375" duration="1617000" />
+      <workItem from="1655697601375" duration="4949000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
