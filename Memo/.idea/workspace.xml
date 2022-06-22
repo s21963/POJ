@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c42df005-b984-44b8-97b1-ffe75ff4a089" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Icon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Label.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo/Frame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +35,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2AmyBF0F52ehW7cLxTaDqJt9uUx" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -76,7 +78,7 @@
       <workItem from="1655629183037" duration="59000" />
       <workItem from="1655629268484" duration="1108000" />
       <workItem from="1655631481620" duration="1850000" />
-      <workItem from="1655697601375" duration="7575000" />
+      <workItem from="1655697601375" duration="18506000" />
     </task>
     <servers />
   </component>
