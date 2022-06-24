@@ -3,8 +3,8 @@ import java.awt.*;
 
 public class MemoButton extends JButton {
 
-        private String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
-                "P", "R", "S"};
+//        private String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
+//                "P", "R", "S"};
 
         public MemoButton(){
                 this.setHorizontalAlignment(JButton.CENTER);
