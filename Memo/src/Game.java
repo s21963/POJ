@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.ImageIcon;
 import java.awt.*;
+import java.util.Random;
 
 public class Game {
 
@@ -23,6 +24,26 @@ public class Game {
 
         String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
                 "P", "R", "S"};
+        int j = 0;
+        int[] lettersRandom = new int[2 * letters.length];
+        for(int i = -(letters.length); i < letters.length; i++, j++){
+            lettersRandom[j] = i;
+//            System.out.println(lettersRandom[j]);
+        }
+        Random generator = new Random();
+        for(int i = -(letters.length); i < letters.length; i++){
+            int randomNumber = generator.nextInt(lettersRandom.length);
+            int temp = lettersRandom[i];
+            lettersRandom[i] = lettersRandom[randomNumber];
+            randomNumber = temp;
+            System.out.println(lettersRandom[i]);
+
+
+        }
+
+
+        System.out.println("letters length = " + lettersRandom.length);
+
 
 
 
