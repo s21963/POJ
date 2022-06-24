@@ -22,31 +22,14 @@ public class Game {
         window.add(gamePanel, BorderLayout.CENTER);
         window.add(menuPanel, BorderLayout.EAST);
 
-        String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
-                "P", "R", "S"};
-        int j = 1;
-        int[] lettersRandom = new int[2 * letters.length];
-        lettersRandom[0] = 0;
-        for (int i = -(letters.length) + 1; i < letters.length; i++, j++) {
-            lettersRandom[j] = i;
-            System.out.println(lettersRandom[j]);
-        }
 
 
-        Random generator = new Random();
-        for (int i = (lettersRandom.length - 1); i >= 0; i--) {
-            int randomNumber = generator.nextInt(i + 1);
-            int temp = lettersRandom[i];
-            lettersRandom[i] = lettersRandom[randomNumber];
-            lettersRandom[randomNumber] = temp;
-            System.out.println(lettersRandom[i]);
 
 
-//        System.out.println("letters length = " + lettersRandom.length);
 
 
             window.setVisible(true);
         }
     }
-}
+
 
