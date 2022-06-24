@@ -8,17 +8,16 @@ import java.util.Random;
 public class MemoGamePanel extends JPanel implements ActionListener {
 
     private static int size = 6;
+
+    //----------------------       Array with letters      ------------------------------------
     private String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
             "P", "R", "S"};
-    private String[][] lettersArray = makeArray(letters);
-    private MemoButton[][] buttons = addButtons();
-
-    private MemoButton buttonPreviousClick = null;
-
+    private String[][] lettersArray = makeArray(letters);   //Array randomized and adjusted with the GridLayout of buttons
+    private MemoButton[][] buttons = addButtons();      //Tablica przycisków
     int currentIndex_i, currentIndex_j, previosIndex_i, previousIndex_j, clickCount;
     int score;
 
-
+    //----------------------       Constructor MemoGamePanel      ------------------------------------
     public MemoGamePanel() {
         this.setBackground(Color.GRAY);
         this.setPreferredSize(new Dimension(100, 100));
@@ -27,12 +26,14 @@ public class MemoGamePanel extends JPanel implements ActionListener {
     }
 
     //----------------------       Randomize Array      ------------------------------------
+    //Przyporządkowanie Tablicy z indeksami wartości odpowiadających tym indeksom
     public String[][] makeArray(String[] letters) {
-        int[] lettersIndexesRandom = new int[2 * letters.length];
+        int[] lettersIndexesRandom = new int[2 * letters.length];   //Tablica z indeksami
         lettersIndexesRandom[0] = 0;
         for (int j = 1, i = -(letters.length) + 1; i < letters.length; i++, j++) {
             lettersIndexesRandom[j] = i;
         }
+        //Mieszanie indeksów w tablicy z indeksami
         Random generator = new Random();
         for (int i = (lettersIndexesRandom.length - 1); i >= 0; i--) {
             int randomNumber = generator.nextInt(i + 1);
@@ -40,7 +41,7 @@ public class MemoGamePanel extends JPanel implements ActionListener {
             lettersIndexesRandom[i] = Math.abs(lettersIndexesRandom[randomNumber]);
             lettersIndexesRandom[randomNumber] = temp;
         }
-
+        //Wpisanie do tablicy lettersArray wartości z tablicy letters, każda po 2x, w oparciu o losowe indeksy z powyżej
         int count = 0;
         String[][] lettersArray = new String[size][size];
         for (int i = 0; i < size; i++) {
@@ -55,7 +56,6 @@ public class MemoGamePanel extends JPanel implements ActionListener {
 
 
 //----------------------        add Buttons         ------------------------------------
-
     public MemoButton[][] addButtons() {
         MemoButton[][] buttons = new MemoButton[size][size];
         MemoButton temp = new MemoButton();
@@ -76,11 +76,11 @@ public class MemoGamePanel extends JPanel implements ActionListener {
     //----------------------        Actions         ------------------------------------
     Timer timer = new Timer(1000, this::resetButtons);
 
+    //zasłanianie przycisków po niedopasowaniu
     public void resetButtons (ActionEvent e){
         buttons[currentIndex_i][currentIndex_j].setText("");
         buttons[previosIndex_i][previousIndex_j].setText("");
         timer.stop();
-
     }
 
     @Override
@@ -90,7 +90,7 @@ public class MemoGamePanel extends JPanel implements ActionListener {
         return;
 
         clickCount++;
-
+        //Przypisanie właściwych wartości indeksów do zmiennych po kliknięciu przycisku
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (e.getSource() == buttons[i][j] && buttons[i][j] != buttons[previosIndex_i][previousIndex_j]) {
@@ -101,22 +101,26 @@ public class MemoGamePanel extends JPanel implements ActionListener {
             }
         }
         if (clickCount % 2 == 0) {
-            // check whether same position is clicked twice!
-//            if (currentIndex_i == previosIndex_i && currentIndex_j == previousIndex_j) {
-//                clickCount--;
-//                return;
-//            }
+            //Eliminacja podwójnych kliknięć
+            if (currentIndex_i == previosIndex_i && currentIndex_j == previousIndex_j) {
+                clickCount--;
+                return;
+            }
 
             if(lettersArray[currentIndex_i][currentIndex_j] != lettersArray[previosIndex_i][previousIndex_j]) {
                 System.out.println("Nie zrownalo sie");
                 timer.start();
             } else {
                 score++;
+//                ScorePanel.scoreCard.setText("Twój wynik: \n" + score + "\n\nLiczba kliknięć: \n" + clickCount);
+
             }
         } else {
             System.out.println("current = " + lettersArray[currentIndex_i][currentIndex_j] + "-----previous = " + lettersArray[previosIndex_i][previousIndex_j]);
             previosIndex_i = currentIndex_i;
             previousIndex_j = currentIndex_j;
         }
+
+
     }
 }
