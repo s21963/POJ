@@ -62,7 +62,7 @@ public class MemoGamePanel extends JPanel implements ActionListener {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 MemoButton tempButton = new MemoButton();
-                tempButton.setText(lettersArray[i][j]);
+//                tempButton.setText(lettersArray[i][j]);
                 tempButton.addActionListener(this::actionPerformed);
                 buttons[i][j] = tempButton;
                 this.add(buttons[i][j]);
@@ -74,9 +74,12 @@ public class MemoGamePanel extends JPanel implements ActionListener {
 
 
     //----------------------        Actions         ------------------------------------
-    Timer timer = new Timer(1000, this::actionPerformed);
+    Timer timer = new Timer(1000, this::resetButtons);
 
     public void resetButtons (ActionEvent e){
+        buttons[currentIndex_i][currentIndex_j].setText("");
+        buttons[previosIndex_i][previousIndex_j].setText("");
+        timer.stop();
 
     }
 
@@ -91,20 +94,29 @@ public class MemoGamePanel extends JPanel implements ActionListener {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (e.getSource() == buttons[i][j] && buttons[i][j] != buttons[previosIndex_i][previousIndex_j]) {
-                    System.out.println("pooo");
                     currentIndex_i = i;
                     currentIndex_j = j;
+                    buttons[currentIndex_i][currentIndex_j].setText(lettersArray[currentIndex_i][currentIndex_j]);
                 }
             }
         }
         if (clickCount % 2 == 0) {
             // check whether same position is clicked twice!
-            if (currentIndex_i == previosIndex_i && currentIndex_j == previousIndex_j) {
-                clickCount--;
-                return;
+//            if (currentIndex_i == previosIndex_i && currentIndex_j == previousIndex_j) {
+//                clickCount--;
+//                return;
+//            }
 
-
+            if(lettersArray[currentIndex_i][currentIndex_j] != lettersArray[previosIndex_i][previousIndex_j]) {
+                System.out.println("Nie zrownalo sie");
+                timer.start();
+            } else {
+                score++;
             }
+        } else {
+            System.out.println("current = " + lettersArray[currentIndex_i][currentIndex_j] + "-----previous = " + lettersArray[previosIndex_i][previousIndex_j]);
+            previosIndex_i = currentIndex_i;
+            previousIndex_j = currentIndex_j;
         }
     }
 }
