@@ -14,8 +14,8 @@ public class MemoGamePanel extends JPanel implements ActionListener {
             "P", "R", "S"};
     private String[][] lettersArray = makeArray(letters);   //Array randomized and adjusted with the GridLayout of buttons
     private MemoButton[][] buttons = addButtons();      //Tablica przycisków
-    int currentIndex_i, currentIndex_j, previosIndex_i, previousIndex_j, clickCount;
-    int score;
+    int currentIndex_i, currentIndex_j, previosIndex_i, previousIndex_j;
+    public static int score, clickCount;
 
     //----------------------       Constructor MemoGamePanel      ------------------------------------
     public MemoGamePanel() {
@@ -90,6 +90,9 @@ public class MemoGamePanel extends JPanel implements ActionListener {
         return;
 
         clickCount++;
+        MemoMenuPanel.clickCard.setText("Liczba kliknięć:: " + Integer.toString(clickCount));
+
+        System.out.println("Liczba kliknięć: " + clickCount);
         //Przypisanie właściwych wartości indeksów do zmiennych po kliknięciu przycisku
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -108,15 +111,18 @@ public class MemoGamePanel extends JPanel implements ActionListener {
             }
 
             if(lettersArray[currentIndex_i][currentIndex_j] != lettersArray[previosIndex_i][previousIndex_j]) {
-                System.out.println("Nie zrownalo sie");
+//                System.out.println("Nie zrownalo sie");
                 timer.start();
             } else {
                 score++;
+                MemoMenuPanel.scoreCard.setText("Twój wynik:: " + Integer.toString(score));
+
+                System.out.println("Twój wynik to: " + score);
 //                ScorePanel.scoreCard.setText("Twój wynik: \n" + score + "\n\nLiczba kliknięć: \n" + clickCount);
 
             }
         } else {
-            System.out.println("current = " + lettersArray[currentIndex_i][currentIndex_j] + "-----previous = " + lettersArray[previosIndex_i][previousIndex_j]);
+//            System.out.println("current = " + lettersArray[currentIndex_i][currentIndex_j] + "-----previous = " + lettersArray[previosIndex_i][previousIndex_j]);
             previosIndex_i = currentIndex_i;
             previousIndex_j = currentIndex_j;
         }

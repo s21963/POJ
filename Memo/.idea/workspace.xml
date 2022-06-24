@@ -6,9 +6,16 @@
       <change beforePath="$PROJECT_DIR$/out/production/Memo/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo/MemoGamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo/MemoGamePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo/MemoMenuPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo/MemoMenuPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Button.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FrameFlow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FrameGrid.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Label.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MemoGamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemoGamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MemoMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemoMenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyIcon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panel.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +62,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
-    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="MemoGame" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Game" />
       <module name="Memo" />
       <method v="2">
@@ -64,7 +71,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.MemoGame" />
       </list>
     </recent_temporary>
   </component>
@@ -80,7 +87,8 @@
       <workItem from="1655629183037" duration="59000" />
       <workItem from="1655629268484" duration="1108000" />
       <workItem from="1655631481620" duration="1850000" />
-      <workItem from="1655697601375" duration="89796000" />
+      <workItem from="1655697601375" duration="91419000" />
+      <workItem from="1656098792738" duration="1949000" />
     </task>
     <servers />
   </component>

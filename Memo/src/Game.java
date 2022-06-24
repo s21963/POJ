@@ -1,9 +1,6 @@
 import javax.swing.*;
 import javax.swing.ImageIcon;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Random;
 
 public class Game {
 
@@ -19,17 +16,11 @@ public class Game {
         window.setTitle("MEMO Game");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setIconImage(logo.getImage());
-        window.getContentPane().setBackground(new Color(123, 50, 250));
         window.setLayout(new BorderLayout());
         window.add(gamePanel, BorderLayout.CENTER);
         window.add(menuPanel, BorderLayout.EAST);
 
-
-
-
-
-
-            window.setVisible(true);
+        window.setVisible(true);
         }
 
 
