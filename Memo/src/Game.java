@@ -6,14 +6,27 @@ public class Game {
 
     public static void main(String[] args) {
 
-//Tworzę ramkę JFrame
-//        Frame frame = new Frame();
-//        FrameFlow frame1 = new FrameFlow();
-        FrameGrid frame2 = new FrameGrid();
+        ImageIcon logo = new ImageIcon(Game.class.getResource("logo1.png"));
+        MemoGamePanel gamePanel = new MemoGamePanel();
+        MemoMenuPanel menuPanel = new MemoMenuPanel();
+
+        JFrame window = new JFrame();
+        window.setSize(1200, 800);
+        window.setResizable(true);
+        window.setTitle("MEMO Game");
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setIconImage(logo.getImage());
+        window.getContentPane().setBackground(new Color(123,50,250));
+        window.setLayout(new BorderLayout());
+        window.add(gamePanel, BorderLayout.CENTER);
+        window.add(menuPanel, BorderLayout.EAST);
+
+        String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
+                "P", "R", "S"};
 
 
-//        frame.setVisible(true);
-//        frame1.setVisible(true);
-        frame2.setVisible(true);
+
+
+        window.setVisible(true);
     }
 }
