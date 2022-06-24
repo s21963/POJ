@@ -17,37 +17,36 @@ public class Game {
         window.setTitle("MEMO Game");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setIconImage(logo.getImage());
-        window.getContentPane().setBackground(new Color(123,50,250));
+        window.getContentPane().setBackground(new Color(123, 50, 250));
         window.setLayout(new BorderLayout());
         window.add(gamePanel, BorderLayout.CENTER);
         window.add(menuPanel, BorderLayout.EAST);
 
         String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
                 "P", "R", "S"};
-        int j = 0;
+        int j = 1;
         int[] lettersRandom = new int[2 * letters.length];
-        for(int i = -(letters.length); i < letters.length; i++, j++){
+        lettersRandom[0] = 0;
+        for (int i = -(letters.length) + 1; i < letters.length; i++, j++) {
             lettersRandom[j] = i;
-//            System.out.println(lettersRandom[j]);
+            System.out.println(lettersRandom[j]);
         }
+
+
         Random generator = new Random();
-        for(int i = -(letters.length); i < letters.length; i++){
-            int randomNumber = generator.nextInt(lettersRandom.length);
+        for (int i = (lettersRandom.length - 1); i >= 0; i--) {
+            int randomNumber = generator.nextInt(i + 1);
             int temp = lettersRandom[i];
             lettersRandom[i] = lettersRandom[randomNumber];
-            randomNumber = temp;
+            lettersRandom[randomNumber] = temp;
             System.out.println(lettersRandom[i]);
 
 
+//        System.out.println("letters length = " + lettersRandom.length);
+
+
+            window.setVisible(true);
         }
-
-
-        System.out.println("letters length = " + lettersRandom.length);
-
-
-
-
-
-        window.setVisible(true);
     }
 }
+
