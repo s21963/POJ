@@ -7,12 +7,10 @@ import java.awt.event.ActionListener;
 
 public class MemoMenuPanel extends MemoGamePanel implements ActionListener {
 
-
     public JPanel scorePanel = new JPanel();
     public JPanel clickPanel = new JPanel();
     public static JLabel clickCard = new JLabel();
     public static JLabel scoreCard = new JLabel();
-
 
     public MemoMenuPanel(){
         this.setBackground(Color.GREEN);
@@ -36,6 +34,7 @@ public class MemoMenuPanel extends MemoGamePanel implements ActionListener {
         clickCard.setFont(new Font("", Font.PLAIN, 20));
         clickCard.setForeground(Color.white);
     }
-
-
 }
+
+//SwingUtilities.updateComponentTreeUI(this);
+

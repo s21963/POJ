@@ -1,10 +1,13 @@
 import javax.swing.*;
 import javax.swing.ImageIcon;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class Game {
 
     public static void main(String[] args) {
+
+
 
         ImageIcon logo = new ImageIcon(Game.class.getResource("logo1.png"));
         MemoGamePanel gamePanel = new MemoGamePanel();
@@ -21,9 +24,11 @@ public class Game {
         window.add(menuPanel, BorderLayout.EAST);
 
         window.setVisible(true);
-        }
-
-
+    }
 }
+
+
+
+
 
 

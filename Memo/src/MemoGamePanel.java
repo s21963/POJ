@@ -54,7 +54,6 @@ public class MemoGamePanel extends JPanel implements ActionListener {
         return lettersArray;
     }
 
-
 //----------------------        add Buttons         ------------------------------------
     public MemoButton[][] addButtons() {
         MemoButton[][] buttons = new MemoButton[size][size];
@@ -71,7 +70,6 @@ public class MemoGamePanel extends JPanel implements ActionListener {
         }
         return buttons;
     }
-
 
     //----------------------        Actions         ------------------------------------
     Timer timer = new Timer(1000, this::resetButtons);
@@ -91,8 +89,8 @@ public class MemoGamePanel extends JPanel implements ActionListener {
 
         clickCount++;
         MemoMenuPanel.clickCard.setText("Liczba kliknięć:: " + Integer.toString(clickCount));
+        System.out.println("Liczba kliknięć: " + clickCount);   //przekazanie ilości kliknięć do panelu Menu
 
-        System.out.println("Liczba kliknięć: " + clickCount);
         //Przypisanie właściwych wartości indeksów do zmiennych po kliknięciu przycisku
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -104,29 +102,23 @@ public class MemoGamePanel extends JPanel implements ActionListener {
             }
         }
         if (clickCount % 2 == 0) {
+
             //Eliminacja podwójnych kliknięć
             if (currentIndex_i == previosIndex_i && currentIndex_j == previousIndex_j) {
                 clickCount--;
                 return;
             }
-
             if(lettersArray[currentIndex_i][currentIndex_j] != lettersArray[previosIndex_i][previousIndex_j]) {
-//                System.out.println("Nie zrownalo sie");
                 timer.start();
             } else {
                 score++;
                 MemoMenuPanel.scoreCard.setText("Twój wynik:: " + Integer.toString(score));
-
-                System.out.println("Twój wynik to: " + score);
-//                ScorePanel.scoreCard.setText("Twój wynik: \n" + score + "\n\nLiczba kliknięć: \n" + clickCount);
-
+                System.out.println("Twój wynik to: " + score);      //przekananie nowego wyniku do panelu Menu
             }
         } else {
 //            System.out.println("current = " + lettersArray[currentIndex_i][currentIndex_j] + "-----previous = " + lettersArray[previosIndex_i][previousIndex_j]);
             previosIndex_i = currentIndex_i;
             previousIndex_j = currentIndex_j;
         }
-
-
     }
 }
